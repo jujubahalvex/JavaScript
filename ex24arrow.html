@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar se String é vazia</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="frase">Digite a frase:</label>
+        <input type="text" id="frase" name="frase"> <br>
+
+        <button type="button" onclick="verificar()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+    
+
+    <script>
+        const verificar = () => {
+            const entrada = document.getElementById("frase").value;
+            if (entrada === "") {
+                document.getElementById("resultado").textContent = "A string está vazia"; 
+            } else {
+                document.getElementById("resultado").textContent = "A string não está vazia";
+            }
+        }
+    </script>
+
+</body>
+</html>

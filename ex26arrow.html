@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dado um array de números, crie uma função que retorne um novo array contendo apenas os números pares</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="array">Digite a sequência de números (separados por vírgula):</label>
+        <input type="text" id="array" name="array"> <br>
+
+        <button type="button" onclick="pares()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+    
+
+    <script>
+        const pares = () => {
+          let input = document.getElementById("array").value;
+          let array = input.split(",").map(Number); 
+          let pares = [];
+
+          for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                pares.push(array[i]);
+            }
+          }
+
+          document.getElementById("resultado").innerText = "O array dos pares: " + pares.join(", ");
+        }
+    </script>
+
+</body>
+</html>

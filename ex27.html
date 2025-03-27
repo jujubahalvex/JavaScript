@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie uma função que receba uma string e retorne a mesma string em letras maiúsculas.</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="frase">Digite a frase:</label>
+        <input type="text" id="frase" name="frase"> <br>
+
+        <button type="button" onclick="maiscula()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+    
+
+    <script>
+        const maiscula = () => {
+            let frase = document.getElementById("frase").value; // Corrigido para referência correta
+            frase = frase.toUpperCase(); // Corrigido para toUpperCase() corretamente
+            document.getElementById("resultado").innerText = frase;
+        }
+    </script>
+
+</body>
+</html>

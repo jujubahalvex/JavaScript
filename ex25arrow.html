@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função para calcular a área de um círculo</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="raio">Digite o raio:</label>
+        <input type="number" id="raio" name="raio"> <br>
+
+        <button type="button" onclick="calcular()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+    
+
+    <script>
+        const calcular = () => {
+          const raio = document.getElementById("raio").value;
+
+          area = (raio*raio) * 3.14;
+          document.getElementById("resultado").textContent = "Área da circunferência" + area;
+        }
+            
+    </script>
+
+</body>
+</html>
