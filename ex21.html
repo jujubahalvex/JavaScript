@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função para inverter uma string</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="sequencia">Escreva sua sequência:</label>
+        <input type="text" id="sequencia" name="sequencia"> <br>
+
+        <button type="button" onclick="inverterString()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function reverter(str) {
+            var splitString = str.split(""); 
+            var reverseArray = splitString.reverse(); 
+            var joinArray = reverseArray.join(""); 
+            return joinArray; 
+        }
+
+        function inverterString() {
+            // Obter o valor da sequência digitada
+            var sequencia = document.getElementById("sequencia").value;
+            
+            // Chamar a função para inverter a string
+            var resultado = reverter(sequencia);
+            
+            // Exibir o resultado
+            document.getElementById("resultado").innerHTML = "A sequência '" + sequencia + "' invertida fica assim: '" + resultado + "'";
+        }
+    </script>
+</body>
+</html>

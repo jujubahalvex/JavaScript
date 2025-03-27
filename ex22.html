@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função para contar quantas vezes uma letra aparece em uma string</title>
+</head>
+<body>
+    <form id="meuformulario">
+        <label for="frase">Escreva sua frase:</label>
+        <input type="text" id="frase" name="frase"> <br>
+        
+        <label for="letra">Escolha uma letra para contar:</label>
+        <input type="text" id="letra" name="letra" maxlength="1"> <br>
+
+        <button type="button" onclick="contarString()">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contador(frase, letra) {
+            var contador = 0;
+
+            for (var i = 0; i < frase.length; i++) {
+                if (frase[i].toLowerCase() === letra.toLowerCase()) {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        function contarString() {
+            var frase = document.getElementById("frase").value;
+            var letra = document.getElementById("letra").value;
+
+            if (letra.length !== 1) {
+                document.getElementById("resultado").innerHTML = "Por favor, forneça uma única letra.";
+                return;
+            }
+
+
+            var resultado = contador(frase, letra);
+
+            document.getElementById("resultado").innerHTML = "A letra '" + letra + "' aparece " + resultado + " vez(es) na frase: '" + frase + "'.";
+        }
+    </script>
+</body>
+</html>
