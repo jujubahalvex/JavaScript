@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Keydown</title>
+</head>
+<body>
+    <h1>Manutenção de eventos- Keydown</h1>
+    <input type="text" id="campoTexto" placeholder="Digite algo">
+
+    <script>
+        const campo = document.getElementById('campoTexto');
+
+        //Manipulando o evento de pressionamento da tecla
+        campo.addEventListener('keydown',function(event){
+            console.log('Tecla pressionada:', event.key);
+        });
+     
+    </script>
+    
+</body>
+</html>
