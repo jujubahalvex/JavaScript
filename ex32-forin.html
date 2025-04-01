@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in </title>
+</head>
+<body>
+    <h1>For in</h1>
+    <table id="tabelaDados">
+        <thead>
+            <tr>
+                <th>Chave</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const produto = {
+            Nome: 'Blush',
+            Preço: 159.99,
+            Marca: 'Rare Beauty',
+            Estoque: true
+        };
+
+        const tabelaDados = document.getElementById("tabelaDados").getElementsByTagName("tbody")[0];
+
+        for (const chave in produto) {
+            // Cria uma nova linha para cada chave-valor
+            const novaLinha = tabelaDados.insertRow();
+
+            // Insere as células na nova linha
+            const celulaChave = novaLinha.insertCell();
+            const celulaValor = novaLinha.insertCell();
+
+            // Preenche as células com chave e valor
+            celulaChave.textContent = chave;
+            celulaValor.textContent = produto[chave];
+        }
+    </script>
+</body>
+</html>
+
