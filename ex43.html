@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implemente uma função que receba um array de strings e retorne a string mais longa.</title>
+</head> 
+<body>
+
+    <h1>Digite as frases (separadas por vírgula):</h1>
+    <input type="text" id="frase" placeholder="Ex: cachorro,leão,gato">
+    <button type="button" onclick="maisLonga()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const maisLonga = () => {
+            const input = document.getElementById("frase").value;
+            alert(input);
+
+            const arrayStrings = input.split(",").map(str => str.trim());
+            let maior = arrayStrings[0];
+
+            for(let i = 1; i < arrayStrings.length; i++){
+                if (arrayStrings[i].length > maior.length){
+                    maior = arrayStrings[i];
+                }
+            }
+
+            document.getElementById("resultado").innerText = `A maior string é: ${maior}`;
+        }
+    </script>
+
+</body>
+</html>

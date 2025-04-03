@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escreva uma função que receba um array de números e retorne o maior número encontrado.</title>
+</head> 
+<body>
+
+    <h1>Digite os números (separados por vírgula):</h1>
+    <input type="text" id="numeros" placeholder="Ex:1,20,3,45">
+    <button type="button" onclick="filtrarNum()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function filtrarNum() {
+            let input = document.getElementById("numeros").value;
+            let numeros = input.split(",").map(Number); 
+            let maiorNum = numeros[0];
+
+            for (let i = 1; i < numeros.length; i++) { 
+                if (numeros[i] > maiorNum) {
+                    maiorNum = numeros[i]; 
+                }
+            }
+
+            document.getElementById("resultado").innerText = `O maior número é: ${maiorNum}`;
+        }
+    </script>
+
+</body>
+</html>

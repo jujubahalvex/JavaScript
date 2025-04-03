@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie uma função que receba um array de números e retorne um novo array com os números ordenados em ordem crescente</title>
+</head> 
+<body>
+
+    <h1>Digite os números (separadas por vírgula):</h1>
+    <input type="text" id="numero" placeholder="Ex:cachorro,leão,gato">
+    <button type="button" onclick="crescente()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const crescente = () => {
+            ordemcerta = document.getElementById("numero").value.split(",").map(str => str.trim());
+            ordemcerta.sort((a,b) => a -b);
+
+            document.getElementById("resultado").innerText = "Ordem crescente: " + ordemcerta.join(", ");
+}
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escreva uma função que receba um array de strings e retorne um novo array com o comprimento de cada string.</title>
+</head> 
+<body>
+
+    <h1 for ="frase">Digite as frases (separado por vírgulas):</h1>
+    <input type="text" id="frase">
+
+    <button onclick="tamanhoString()">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+   <script>
+    const tamanhoString = () => {
+    const input = document.getElementById("frase").value;
+    const arrayStrings = input.split(",").map(str => str.trim()); // Vai dividir **split() e remover espaços extras **metódo trim()
+    const comprimentos = arrayStrings.map(str => str.length);
+
+    document.getElementById("resultado").innerText = "Comprimentos: " + comprimentos.join(", ");
+}
+   </script>
+
+</body>
+</html>
