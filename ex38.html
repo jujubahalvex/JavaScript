@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Crie uma função que receba um array de números e retorne a soma de todos os elementos pares.</title>
+</head> 
+<body>
+
+    <h1 for ="numeros">Digite os números(separadas por vírgulas):</h1>
+    <input type="text" id="numeros">
+
+    <button onclick="calcular()">Calcular</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let input = document.getElementById("numeros").value;
+            let numeros = input.split(",").map(Number); 
+            let soma = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+                if(numeros[i] % 2 == 0){
+                    soma += numeros[i];
+                }
+            }
+            document.getElementById("resultado").innerText = `A Soma dos pares é: ${soma}`;
+
+               
+        }
+    </script>
+
+</body>
+</html>

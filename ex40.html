@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implemente uma função que receba um array de números e retorne um novo array com o quadrado de cada número.</title>
+</head> 
+<body>
+
+    <h1 for="numeros">Digite os números(separados por vírgula):</h1>
+    <input type="text" id="numeros">
+    <button type="button" onclick="comprimento()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function comprimento() {
+            let input = document.getElementById("numeros").value;
+            let numeros = input.split(",").map(Number); 
+
+            const quadrados = numeros.map(num => num * num);
+
+            document.getElementById("resultado").innerText = `Array dos números ao quadrado: [ ${quadrados.join(", ")} ]`;
+        }
+    </script>
+
+</body>
+</html>
